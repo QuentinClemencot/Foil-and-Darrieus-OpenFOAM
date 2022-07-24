@@ -1,0 +1,32 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+blades_surfaces
+{
+    type            surfaces;
+    libs            (sampling);
+    writeControl    timeStep;
+    writeInterval   2;
+
+    surfaceFormat   foam;
+    fields          (p); 
+
+    // interpolationScheme cellPoint;  //<- default
+
+    surfaces
+    {
+        blade1
+        {
+            type            patch;
+            patches         ("BLADE1");
+        }
+    }
+}
+
+
+// ************************************************************************* //

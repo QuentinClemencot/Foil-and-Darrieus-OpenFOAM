@@ -1,0 +1,94 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    arch        "LSB;label=32;scalar=64";
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+9
+(
+    airfoil
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          358;
+        startFace       117112;
+    }
+    rotorFrontAndBack
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          66588;
+        startFace       117470;
+    }
+    INLET
+    {
+        type            patch;
+        nFaces          129;
+        startFace       184058;
+    }
+    OUTLET
+    {
+        type            patch;
+        nFaces          129;
+        startFace       184187;
+    }
+    BOTTOM
+    {
+        type            symmetry;
+        inGroups        1(symmetry);
+        nFaces          139;
+        startFace       184316;
+    }
+    TOP
+    {
+        type            symmetry;
+        inGroups        1(symmetry);
+        nFaces          139;
+        startFace       184455;
+    }
+    frontAndBack
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          51332;
+        startFace       184594;
+    }
+    interface_stator
+    {
+        type            cyclicAMI;
+        inGroups        1(cyclicAMI);
+        nFaces          364;
+        startFace       235926;
+        matchTolerance  0.0001;
+        transform       unknown;
+        neighbourPatch  interface_rotor;
+        AMIMethod       faceAreaWeightAMI;
+        restartUncoveredSourceFace 1;
+    }
+    interface_rotor
+    {
+        type            cyclicAMI;
+        inGroups        1(cyclicAMI);
+        nFaces          358;
+        startFace       236290;
+        matchTolerance  0.0001;
+        transform       unknown;
+        neighbourPatch  interface_stator;
+        AMIMethod       faceAreaWeightAMI;
+        restartUncoveredSourceFace 1;
+    }
+)
+
+// ************************************************************************* //

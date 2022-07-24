@@ -1,0 +1,34 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+
+forces1
+{
+#include	"forces.cfg"
+
+    patches     (BLADE1);
+
+    rho         rhoInf; 
+    rhoInf      1.225; 
+    CofR        (0 0 0);
+    pitchAxis   (0 0 1);
+}
+
+forces2
+{
+#include	"forces.cfg"
+
+    patches     (BLADE2);
+
+    rho         rhoInf; 
+    rhoInf      1.225; 
+    CofR        (0 0 0);
+    pitchAxis   (0 0 1);
+}
+
+// ************************************************************************* //

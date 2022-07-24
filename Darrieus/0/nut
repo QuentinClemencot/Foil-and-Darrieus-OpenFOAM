@@ -1,0 +1,100 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      nut;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -1 0 0 0 0];
+
+
+internalField   uniform 0;
+
+boundaryField
+{
+    BLADE1
+    {
+        type            nutLowReWallFunction;
+        value           uniform 0;
+    }
+    BLADE2
+    {
+        type            nutLowReWallFunction;
+        value           uniform 0;
+    }
+    SYMM_LAT2_ROTOR
+    {
+        type            empty;
+    }
+    SYMM_LAT1_ROTOR
+    {
+        type            empty;
+    }
+    INTERFACE_ROTOR_INNER
+    {
+        type            cyclicAMI;
+        value           uniform 0;
+    }
+    INTERFACE_ROTOR_OUTER
+    {
+        type            cyclicAMI;
+        value           uniform 0;
+    }
+    SYMM_LAT2_INNER
+    {
+        type            empty;
+    }
+    SYMM_LAT1_INNER
+    {
+        type            empty;
+    }
+    INTERFACE_INNER
+    {
+        type            cyclicAMI;
+        value           uniform 0;
+    }
+    SYMM_LAT2_OUTER
+    {
+        type            empty;
+    }
+    SYMM_LAT1_OUTER
+    {
+        type            empty;
+    }
+    INTERFACE_OUTER
+    {
+        type            cyclicAMI;
+        value           uniform 0;
+    }
+    TOP
+    {
+        type            symmetryPlane;
+    }
+    BOTTOM
+    {
+        type            symmetryPlane;
+    }
+    INLET
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    OUTLET
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+}
+
+
+// ************************************************************************* //

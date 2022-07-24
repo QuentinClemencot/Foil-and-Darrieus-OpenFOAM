@@ -1,0 +1,21 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2106                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+
+flowVelocity         (1 0 0);
+referencePressure    0;
+turbulentKE          0.00015;
+turbulentOmega       22.36;
+
+//values of turbulentKE and turulentOmega are deduce from:
+//https://www.openfoam.com/documentation/guides/latest/doc/guide-turbulence-ras-k-omega-sst.html
+// with:
+// - turbulent intensity I = 0.01
+// - turbulence lenght scale L = 0.001c = 0.001m
+
+// ************************************************************************* //
