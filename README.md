@@ -4,8 +4,8 @@ This repository contains the basic files allowing the CFD simulation of a Darrie
 
 ## What is this repository for?
 
-- Basic files for openfoam simulation
-- OpenFoam Versions : v2106plus
+- Basic files for OpenFOAM simulation
+- OpenFoam Versions : v2106plus to v2206plus
 
 ## Description of cases:
 
