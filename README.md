@@ -2,6 +2,9 @@
 
 This repository contains the basic files allowing the CFD simulation of a Darrieus turbine and a fixed airfoil on `OpenFOAM v2106`.
 
+
+[![DOI](https://zenodo.org/badge/517322414.svg)](https://zenodo.org/badge/latestdoi/517322414)
+
 ## What is this repository for?
 
 - Basic files for OpenFOAM simulation
