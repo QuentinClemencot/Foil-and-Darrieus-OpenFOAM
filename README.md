@@ -15,7 +15,7 @@ This repository contains the basic files allowing the CFD simulation of a Darrie
 ### Darrieus
 
 - The turbine employed is the one tested by [Li et al., 2016](https://www.sciencedirect.com/science/article/abs/pii/S0360544216303334).
--  It is H-rotor Darrieus turbine. 
+-  It is H-rotor Darrieus turbine. The shaft is not taken into account in the simulation.
 -  Below are some of these characteristics:
 
 
